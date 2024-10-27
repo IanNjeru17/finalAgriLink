@@ -1,0 +1,68 @@
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 20px;
+  }
+  
+  .contentWrapper {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .leftSection {
+    flex: 3;
+  }
+  
+  .rightSection {
+    flex: 1;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .customer-profile,
+  .product-list {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .productCard,
+  .orderItemCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 15px;
+    margin: 8px 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .orderItemCard input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    margin-left: 10px;
+  }
+  
+  .placeOrderButton {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .placeOrderButton:hover {
+    background: #0056b3;
+  }
+  

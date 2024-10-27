@@ -1,0 +1,141 @@
+.category-section {
+    padding: 4rem 1.5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  
+  .category-image {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .col-lg-6  {
+    justify-content: center;
+  }
+  .box-padding-left-50 {
+    padding-left: 2rem;
+  }
+  
+  .strate-icon {
+    font-size: 3.9rem;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #4caf50; /* A green color for the agriculture theme */
+  }
+  
+  .heading-2 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .text-lg {
+    font-size: 1.125rem;
+    color: #555;
+    margin-left: 200px;
+    margin-bottom: 2rem;
+  }
+  
+  .card-feature-2 {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #f9f9f9;
+    transition: box-shadow 0.3s;
+  }
+  
+  .card-feature-2:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-image img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .card-info h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+  }
+  
+  .card-info p {
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  .mt-50 {
+    margin-top: 3rem;
+  }
+  
+  @media (max-width: 768px) {
+    .box-padding-left-50 {
+      padding-left: 0;
+    }
+  
+    .row.align-items-center {
+      flex-direction: column;
+    }
+  
+    .card-feature-2 {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  .row.mt-50 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .card-feature-2 {
+    flex: 1 1 45%; /* Adjust width of each card */
+    min-width: 250px;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #f9f9f9;
+    transition: box-shadow 0.3s;
+  }
+  
+  .card-feature-2:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-image img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .card-info h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+  }
+  
+  .card-info p {
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .card-feature-2 {
+      flex: 1 1 100%;
+    }
+  }
+  

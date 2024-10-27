@@ -1,0 +1,51 @@
+.about-us-section {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .about-us-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .about-us-description {
+    font-size: 1.125rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: #ccc;
+  }
+  
+  .about-us-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+  }
+  
+  .stat {
+    text-align: center;
+  }
+  
+  .stat h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+    color: #fff;
+  }
+  
+  .stat p {
+    font-size: 1rem;
+    color: #aaa;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .about-us-stats {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  
