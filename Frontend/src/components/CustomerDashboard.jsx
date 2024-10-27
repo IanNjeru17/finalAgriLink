@@ -13,7 +13,7 @@ const CustomerDashboard = () => {
   useEffect(() => {
     fetchProducts();
     fetchOrders();
-    fetchCustomerProfile(); // Fetch customer profile
+    fetchCustomerProfile(); 
   }, []);
 
   const fetchProducts = async () => {

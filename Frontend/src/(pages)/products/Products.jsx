@@ -11,6 +11,7 @@ const Products = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
     const [openModal, setOpenModal] = useState(false);
+    const [alertMessage, setAlertMessage] = useState('');
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -31,10 +32,11 @@ const Products = () => {
 
     const handleAddToCart = () => {
         if (!user) {
+            setAlertMessage('You need to be logged in to add items to your cart.');
             setOpenModal(true); 
         } else {
             console.log('Product added to cart');
-            
+            // Add your logic to add the product to the cart here
         }
     };
 
@@ -42,7 +44,10 @@ const Products = () => {
         e.target.src = 'https://via.placeholder.com/200?text=Image+Not+Available';
     };
 
-    const handleCloseModal = () => setOpenModal(false);
+    const handleCloseModal = () => {
+        setOpenModal(false);
+        setAlertMessage(''); // Clear the alert message
+    };
 
     if (loading) {
         return <div>Loading...</div>;
@@ -53,8 +58,9 @@ const Products = () => {
     }
 
     return (
-        <div className="products-container">
+        <div className="products-container"> 
             <h1>Fruits and Vegetables Available</h1>
+            {alertMessage && <div className="alert-message">{alertMessage}</div>}
             <div className="product-cards">
                 {products.map(product => (
                     <div key={product.id} className="product-card">
@@ -65,6 +71,11 @@ const Products = () => {
                         <button onClick={handleAddToCart}>Add to Cart</button>
                     </div>
                 ))}
+                 <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px',alignItems:"center" }}>
+                    <button style={{ padding: '10px 20px' }}>
+                    <Link to='/' className='link'>Home</Link>
+                    </button>
+                </div>
             </div>
 
             {/* Login Prompt Modal */}

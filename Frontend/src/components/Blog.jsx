@@ -108,9 +108,8 @@ function Blog() {
           <div>
             <h2>Navigation</h2>
             <div className="navigation-buttons">
-              <button className="nav-button">🏠 Home</button>
-              <button className="nav-button">🌐 View on Website</button>
-              <button className="nav-button">💾 Save As Draft</button>
+            <button className="nav-button"><Link to='/' className='link'>🏠 Home</Link></button>
+             
             </div>
           </div>
         )}

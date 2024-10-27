@@ -649,7 +649,7 @@ button:hover {
 }
 
 .product-list button {
-  background-color: #007bff; /
+  background-color: #007bff; 
 }
 
 .product-list button:hover {
@@ -659,7 +659,7 @@ button:hover {
 /* Customer Specific Styles */
 .customer-profile {
   margin-top: 20px;
-  padding: 20px; /
+  padding: 20px; 
 }
 
 /* Responsive Styles */
@@ -766,6 +766,7 @@ button {
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .edit-button:hover {

@@ -237,8 +237,7 @@ class FarmerProductsResource(Resource):
 
 
 
-class Blogs(Resource):
-    
+class Blogs(Resource): 
     
     def get(self):
         blogs = [blog.serialize() for blog in BlogPost.query.all()]
@@ -270,7 +269,7 @@ class Blogs(Resource):
         return new_blog_post.serialize(), 201
         
 class BlogByID(Resource):
-    @jwt_required()
+ 
     def get(self, id):
         blog = BlogPost.query.get_or_404(id)
         return blog.serialize()

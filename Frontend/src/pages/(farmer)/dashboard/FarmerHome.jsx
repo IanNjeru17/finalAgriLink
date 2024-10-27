@@ -187,38 +187,6 @@ const FarmerHome = () => {
             </button>
           </section>
         </div>
-        <div className="listContainer">
-          <div className="listTitle">Latest Transactions</div>
-          <section className="product-list">
-          <h2>Product List</h2>
-          <ul>
-            {products.map(product => (
-              <li key={product.id} className="product-item">
-                <div className="product-details">
-                  <img src={product.image_url} alt={product.name} width="50" />
-                  <div className="product-info">
-                    <strong>{product.name}</strong> - ${product.price} - {product.description}
-                  </div>
-                </div>
-                <div className="product-actions">
-                  <button 
-                    className="edit-button" 
-                    onClick={() => handleEditProduct(product)}
-                  >
-                    Edit
-                  </button>
-                  <button 
-                    className="delete-button" 
-                    onClick={() => handleDeleteProduct(product.id)}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </section>
-        </div>
         {showModal && (
           <Modal 
             message={modalMessage} 
