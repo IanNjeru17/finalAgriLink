@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }) => {
 
     const fetchUserProfile = async (token) => {
         try {
-            const profileResponse = await axios.get("http://localhost:5000/auth/user-profile", {
+            const profileResponse = await axios.get("https://finalagrilink.onrender.com/auth/user-profile", {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 },

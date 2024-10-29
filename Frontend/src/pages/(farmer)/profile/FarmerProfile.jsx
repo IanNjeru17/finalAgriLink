@@ -21,7 +21,7 @@ const FarmerProfile = () => {
     const fetchUserProfile = async () => {
       const token = localStorage.getItem('token');
       try {
-        const response = await fetch('http://localhost:5000/auth/user-profile', {
+        const response = await fetch('https://finalagrilink.onrender.com/api/auth/user-profile', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',
