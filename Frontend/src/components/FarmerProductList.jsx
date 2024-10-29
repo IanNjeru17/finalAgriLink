@@ -13,7 +13,7 @@ const FarmerProductList = () => {
   const fetchFarmerProducts = async () => {
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch('http://127.0.0.1:5000/farmer/products', {
+      const response = await fetch('https://finalagrilink.onrender.com/farmer/products', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',

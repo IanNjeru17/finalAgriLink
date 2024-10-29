@@ -34,7 +34,7 @@ function Blog() {
   useEffect(() => {
     const fetchBlogPosts = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/blogs');
+        const response = await fetch('https://finalagrilink.onrender.com/api/blogs');
         if (!response.ok) {
           throw new Error('Failed to fetch blog posts');
         }
@@ -67,7 +67,7 @@ function Blog() {
 
       // Send new blog post to the backend
       try {
-        const response = await fetch('http://localhost:5000/api/blogs', { 
+        const response = await fetch('https://finalagrilink.onrender.com/api/blogs', { 
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

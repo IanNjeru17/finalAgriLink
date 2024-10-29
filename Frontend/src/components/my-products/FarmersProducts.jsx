@@ -21,7 +21,7 @@ const FarmersProducts = () => {
         if (!user) return;
 
         try {
-            const response = await fetch(`http://127.0.0.1:5000/api/farmer/products/${user.id}`, {
+            const response = await fetch(`https://finalagrilink.onrender.com/api/farmer/products/${user.id}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const FarmersProducts = () => {
         const token = localStorage.getItem('token');
         setLoading(true);
 
-        const response = await fetch(`http://127.0.0.1:5000/api/products`, {
+        const response = await fetch(`https://finalagrilink.onrender.com/api/products`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ const FarmersProducts = () => {
 
     const handleUpdateProduct = async () => {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://127.0.0.1:5000/api/products/${editProductId}`, {
+        const response = await fetch(`https://finalagrilink.onrender.com/api/products/${editProductId}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -101,7 +101,7 @@ const FarmersProducts = () => {
 
     const handleDeleteProduct = async (productId) => {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://127.0.0.1:5000/api/products/${productId}`, {
+        const response = await fetch(`https://finalagrilink.onrender.com/api/products/${productId}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`,

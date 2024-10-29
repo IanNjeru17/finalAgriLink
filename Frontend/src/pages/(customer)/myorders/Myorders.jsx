@@ -22,7 +22,7 @@ const Myorders = () => {
   const fetchProducts = async () => {
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/products', {
+      const response = await fetch('https://finalagrilink.onrender.com/api/products', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ const Myorders = () => {
   const fetchOrders = async () => {
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/user/orders', {
+      const response = await fetch('https://finalagrilink.onrender.com/api/user/orders', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ const Myorders = () => {
   const fetchCustomerProfile = async () => {
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch('http://localhost:5000/auth/user-profile', {
+      const response = await fetch('https://finalagrilink.onrender.com/auth/user-profile', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ const Myorders = () => {
 
   const handleDeleteOrder = async (orderId) => {
     const token = localStorage.getItem('token');
-    const response = await fetch(`http://127.0.0.1:5000/api/orders/${orderId}`, {
+    const response = await fetch(`https://finalagrilink.onrender.com/api/orders/${orderId}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${token}`,

@@ -7,7 +7,7 @@ const LogoutButton = () => {
 
     const handleLogout = () => {
         // Optional: Make a logout request to the backend
-        fetch('/api/logout', {
+        fetch('https://finalagrilink.onrender.com/api/logout', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('refreshToken')}`
