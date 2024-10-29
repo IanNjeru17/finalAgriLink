@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (email, password) => {
         try {
-            const response = await axios.post("http://127.0.0.1:5000/auth/login", {
+            const response = await axios.post("https://finalagrilink.onrender.com/auth/login", {
                 email,
                 password,
             });
