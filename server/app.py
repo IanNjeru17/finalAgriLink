@@ -17,7 +17,7 @@ def create_app():
     CORS(app)
     
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL') or 'sqlite:///app.db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://agrilink_db_user:dbKnYM4sigh6mthBP7VyiCE1KAdnHFXT@dpg-csgf6khu0jms73901e1g-a.oregon-postgres.render.com/agrilink_db"
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(minutes=30)  
     app.config['JWT_REFRESH_TOKEN_EXPIRES'] = timedelta(days=30) 

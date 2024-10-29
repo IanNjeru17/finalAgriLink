@@ -1,8 +1,8 @@
-"""initial migration
+"""empty message
 
-Revision ID: 79ada55d10b1
+Revision ID: 52067ae44526
 Revises: 
-Create Date: 2024-10-22 15:23:25.929014
+Create Date: 2024-10-29 17:43:37.489022
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '79ada55d10b1'
+revision = '52067ae44526'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -46,6 +46,16 @@ def upgrade():
     sa.Column('role', sa.String(length=20), nullable=False),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('email')
+    )
+    op.create_table('blog_posts',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('farmer_id', sa.Integer(), nullable=False),
+    sa.Column('title', sa.String(length=100), nullable=False),
+    sa.Column('content', sa.Text(), nullable=False),
+    sa.Column('date_created', sa.DateTime(), nullable=True),
+    sa.Column('date_updated', sa.DateTime(), nullable=True),
+    sa.ForeignKeyConstraint(['farmer_id'], ['users.id'], ),
+    sa.PrimaryKeyConstraint('id')
     )
     op.create_table('orders',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -93,6 +103,7 @@ def downgrade():
     op.drop_table('user_roles')
     op.drop_table('products')
     op.drop_table('orders')
+    op.drop_table('blog_posts')
     op.drop_table('users')
     op.drop_table('token_blocklist')
     op.drop_table('roles')
