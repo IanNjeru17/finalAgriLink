@@ -11,12 +11,12 @@ class User(db.Model, SerializerMixin):
     __tablename__ = 'users'
     
     id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(50), nullable=False)
-    last_name = db.Column(db.String(50), nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    phone = db.Column(db.String(15), nullable=False)
-    password = db.Column(db.String(128), nullable=False)
-    role = db.Column(db.String(20), nullable=False) 
+    first_name = db.Column(db.String, nullable=False)
+    last_name = db.Column(db.String, nullable=False)
+    email = db.Column(db.String, unique=True, nullable=False)
+    phone = db.Column(db.String, nullable=False)
+    password = db.Column(db.String, nullable=False)
+    role = db.Column(db.String, nullable=False) 
     
     roles = db.relationship('Role', secondary=user_roles, back_populates='users')
     orders = db.relationship('Order', back_populates='customer')
@@ -39,7 +39,7 @@ class Role(db.Model, SerializerMixin):
     __tablename__ = "roles"
     
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), nullable=False)
+    name = db.Column(db.String, nullable=False)
     
     users = db.relationship('User', secondary=user_roles, back_populates='roles')
 
@@ -50,7 +50,7 @@ class Order(db.Model, SerializerMixin):
     
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    status = db.Column(db.String(20), nullable=False)
+    status = db.Column(db.String, nullable=False)
     total_amount = db.Column(db.Float, nullable=False)
     
     customer = db.relationship('User', back_populates='orders')
@@ -96,11 +96,11 @@ class Product(db.Model, SerializerMixin):
     __tablename__ = 'products'
     
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80), nullable=False)
+    name = db.Column(db.String, nullable=False)
     category_id = db.Column(db.Integer, db.ForeignKey('categories.id'), nullable=True)
     price = db.Column(db.Float, nullable=True)
     description = db.Column(db.Text, nullable=True)
-    image_url = db.Column(db.String(255), nullable=True)
+    image_url = db.Column(db.String, nullable=True)
     farmer_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True) 
     
     category = db.relationship('Category', back_populates='products', lazy='joined')
@@ -124,7 +124,7 @@ class Category(db.Model, SerializerMixin):
     __tablename__ = 'categories'
     
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), unique=True, nullable=False)
+    name = db.Column(db.String, unique=True, nullable=False)
     
     products = db.relationship('Product', back_populates='category')
 
@@ -135,7 +135,7 @@ class BlogPost(db.Model, SerializerMixin):
     
     id = db.Column(db.Integer, primary_key=True)
     farmer_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    title = db.Column(db.String(100), nullable=False)
+    title = db.Column(db.String, nullable=False)
     content = db.Column(db.Text, nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
     date_updated = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
@@ -162,7 +162,7 @@ class TokenBlocklist(db.Model, SerializerMixin):
     __tablename__ = 'token_blocklist'
     
     id = db.Column(db.Integer, primary_key=True)
-    jti = db.Column(db.String(36), unique=True, nullable=False)
+    jti = db.Column(db.String, unique=True, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
     serialize_rules = ()
